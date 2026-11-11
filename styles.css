@@ -1,0 +1,874 @@
+/* ==========================================================================
+   VARIABLES Y CONFIGURACIÓN GENERAL
+   ========================================================================== */
+:root {
+    --bg-black: #0d0d0d;
+    --bg-dark: #171414;
+    --bg-card: #221c1c;
+    --primary-red: #c62828;
+    --bright-red: #e53935;
+    --primary-orange: #f57c00;
+    --primary-yellow: #ffb300;
+    --text-white: #ffffff;
+    --text-light: #f5f5f5;
+    --text-muted: #b0b0b0;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-black);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ==========================================================================
+   ESTILOS GENERALES
+   ========================================================================== */
+.section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.3rem;
+    color: var(--text-white);
+    margin-bottom: 40px;
+    text-transform: uppercase;
+}
+
+.section-title span {
+    color: var(--primary-orange);
+    text-shadow: 0 0 10px rgba(245, 124, 0, 0.4);
+}
+
+.section-title.left {
+    text-align: left;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-muted);
+    margin-top: -30px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, var(--primary-red), var(--primary-orange));
+    color: var(--text-white);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(198, 40, 40, 0.5);
+}
+
+.btn-secondary {
+    background-color: #25d366;
+    color: var(--text-white);
+}
+
+.btn-secondary:hover {
+    background-color: #1eb854;
+    transform: translateY(-3px);
+}
+
+.btn-small {
+    padding: 8px 20px;
+    background-color: var(--primary-yellow);
+    color: var(--bg-black);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.btn-small:hover {
+    background-color: #ffa000;
+}
+
+/* ==========================================================================
+   SECCIÓN 1: HEADER & NAVBAR
+   ========================================================================== */
+.header {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: rgba(13, 13, 13, 0.95);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    border-bottom: 3px solid var(--primary-red);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    max-height: 110px;
+    width: auto;
+    object-fit: contain;
+    border-radius: 50%;
+    border: 3px solid var(--primary-orange);
+    background-color: var(--bg-card);
+    padding: 3px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links a {
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-yellow);
+}
+
+.hero {
+    height: 85vh;
+    background: linear-gradient(rgba(13,13,13,0.7), rgba(13,13,13,0.85)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+    position: relative;
+    border-bottom: 4px solid var(--primary-orange);
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.badge {
+    background-color: var(--primary-red);
+    color: var(--text-white);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.hero-content h1 {
+    font-size: 3.3rem;
+    color: var(--text-white);
+    margin: 10px 0;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin-bottom: 30px;
+    color: var(--text-muted);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* ==========================================================================
+   SECCIÓN 2: PROMOCIONES
+   ========================================================================== */
+.promos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.promo-card {
+    background-color: var(--bg-dark);
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 4px solid var(--primary-orange);
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.promo-card.highlight {
+    border-top-color: var(--bright-red);
+    background-color: var(--bg-card);
+    transform: scale(1.03);
+    border: 1px solid rgba(229, 57, 53, 0.3);
+}
+
+.promo-tag {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background-color: var(--primary-red);
+    color: var(--text-white);
+    font-size: 0.75rem;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.promo-card h3 {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.promo-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.promo-card .price {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary-yellow);
+    margin: 15px 0;
+}
+
+/* ==========================================================================
+   SECCIÓN 3: NUESTRO MENÚ DIGITAL
+   Libro abierto: dos imágenes verticales visibles a la vez
+   con animación de hoja que se voltea
+   ========================================================================== */
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.book-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% - 40px);
+    max-width: 590px;
+    margin: 0 auto;
+}
+
+.book-spread {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 8;
+    padding: 8px;
+    border: 2px solid #a66b35;
+    border-radius: 14px;
+    background: linear-gradient(145deg, #3a2115, #17100c);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.55), inset 0 0 0 2px rgba(255,190,100,0.12);
+}
+
+/* Contenedor interno con perspectiva para el giro 3D */
+.book-pages {
+    position: absolute;
+    inset: 8px;
+    perspective: 1800px;
+}
+
+/* Páginas fijas (izquierda y derecha) */
+.book-page {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background: #211711;
+}
+
+.book-page.left {
+    left: 0;
+    border-right: 1px solid rgba(166,107,53,0.6);
+}
+
+.book-page.right {
+    left: 50%;
+}
+
+/* Cada imagen conserva la proporción vertical 1080 x 1920 */
+.book-page img,
+.leaf-face img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Página vacía (por si algún pliego queda con una sola imagen) */
+.blank {
+    background: linear-gradient(135deg, #2a1b13, #17100c);
+}
+
+/* Las medidas de texto de las páginas escalan con el ancho de la página */
+.book-page,
+.leaf-face {
+    container-type: inline-size;
+}
+
+/* Página decorativa al lado de la portada */
+.intro-page {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    padding: 9cqw 7cqw;
+    color: var(--text-white);
+    background:
+        radial-gradient(circle at 50% 42%, rgba(198, 40, 40, 0.30), transparent 60%),
+        repeating-linear-gradient(45deg, rgba(255, 190, 100, 0.04) 0 2px, transparent 2px 12px),
+        linear-gradient(160deg, #2a0d0a, #120908);
+}
+
+.intro-page::before {
+    content: "";
+    position: absolute;
+    inset: 4cqw;
+    border: 1px solid rgba(245, 124, 0, 0.55);
+    border-radius: 2cqw;
+    pointer-events: none;
+}
+
+.intro-icon {
+    font-size: 16cqw;
+    color: var(--primary-yellow);
+    filter: drop-shadow(0 0 3cqw rgba(245, 124, 0, 0.6));
+}
+
+.intro-title {
+    font-size: 20cqw;
+    font-weight: 800;
+    letter-spacing: 2cqw;
+    line-height: 1;
+    color: var(--primary-orange);
+    text-shadow: 0 0 4cqw rgba(245, 124, 0, 0.45);
+}
+
+.intro-divider {
+    width: 40cqw;
+    height: 2px;
+    margin: 6cqw auto;
+    background: linear-gradient(to right, transparent, var(--primary-yellow), transparent);
+}
+
+.intro-sub {
+    font-size: 6cqw;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 0.6cqw;
+    color: var(--text-muted);
+}
+
+.intro-hint {
+    font-size: 5cqw;
+    color: var(--primary-yellow);
+}
+
+/* Espacio para tu imagen (se muestra solo si la imagen no existe todavía) */
+.placeholder-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4cqw;
+    padding: 8cqw;
+    text-align: center;
+    color: var(--text-muted);
+    background: rgba(255, 255, 255, 0.03);
+    border: 2px dashed rgba(255, 190, 100, 0.45);
+}
+
+.placeholder-page i {
+    font-size: 16cqw;
+    color: var(--primary-orange);
+}
+
+.placeholder-page p {
+    font-size: 6cqw;
+    font-weight: 600;
+}
+
+.placeholder-page small {
+    font-size: 4.5cqw;
+    color: var(--primary-yellow);
+    word-break: break-all;
+}
+
+/* Sombra del lomo central */
+.book-pages::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(50% - 14px);
+    width: 28px;
+    background: linear-gradient(to right, transparent, rgba(0,0,0,0.35) 50%, transparent);
+    pointer-events: none;
+    z-index: 30;
+}
+
+/* La hoja que se voltea */
+.leaf {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    z-index: 20;
+    transform-style: preserve-3d;
+}
+
+.leaf.next {
+    left: 50%;
+    transform-origin: left center;
+    animation: leafNext 0.9s cubic-bezier(0.65, 0.05, 0.35, 1) forwards;
+}
+
+.leaf.prev {
+    left: 0;
+    transform-origin: right center;
+    animation: leafPrev 0.9s cubic-bezier(0.65, 0.05, 0.35, 1) forwards;
+}
+
+.leaf-face {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    background: #211711;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+.leaf-face.back {
+    transform: rotateY(180deg);
+}
+
+/* Sombra que cambia mientras la hoja gira */
+.leaf-face .shade {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.leaf-face.front .shade {
+    animation: shadeIn 0.9s linear forwards;
+}
+
+.leaf-face.back .shade {
+    animation: shadeOut 0.9s linear forwards;
+}
+
+@keyframes leafNext {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(-180deg); }
+}
+
+@keyframes leafPrev {
+    from { transform: rotateY(0deg); }
+    to   { transform: rotateY(180deg); }
+}
+
+@keyframes shadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes shadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+.book-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--primary-red);
+    color: var(--text-white);
+    border: 1px solid #d49a55;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    font-size: 0.95rem;
+    cursor: pointer;
+    z-index: 100;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+.book-nav:hover {
+    background-color: var(--primary-orange);
+    transform: translateY(-50%) scale(1.08);
+}
+
+.prev-btn {
+    left: -17px;
+}
+
+.next-btn {
+    right: -17px;
+}
+
+/* ==========================================================================
+   SECCIÓN 4: NOSOTROS Y 5: ESPECIALIDADES
+   ========================================================================== */
+.nosotros-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.nosotros-text p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+}
+
+.nosotros-img img {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid var(--primary-orange);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    color: var(--primary-yellow);
+}
+
+.stat-item p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background-color: var(--bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 1px solid #222;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-orange);
+}
+
+.card-img-slot img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 2px solid var(--primary-red);
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h3 {
+    color: var(--text-white);
+    margin-bottom: 10px;
+}
+
+.card-body p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   SECCIÓN 6: UBICACIÓN Y MAPA DE GOOGLE
+   ========================================================================== */
+.ubicacion-container {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 25px;
+    background-color: var(--bg-dark);
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.info-item i {
+    font-size: 1.5rem;
+    color: var(--primary-orange);
+    margin-top: 5px;
+}
+
+.info-item h4 {
+    color: var(--text-white);
+}
+
+.info-item p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.map-box {
+    width: 100%;
+    min-height: 350px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   SECCIÓN 7: FOOTER
+   ========================================================================== */
+.footer {
+    background-color: #050505;
+    border-top: 2px solid var(--primary-red);
+    padding: 50px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.footer-col h3 {
+    color: var(--primary-yellow);
+    margin-bottom: 15px;
+}
+
+.footer-col p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    width: 45px;
+    height: 45px;
+    background-color: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: var(--text-white);
+    font-size: 1.3rem;
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+}
+
+.social-links a:hover {
+    transform: translateY(-3px);
+}
+
+.social-links a[aria-label="Instagram"]:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%,#d6249f 60%,#285AEB 90%);
+}
+
+.social-links a[aria-label="WhatsApp"]:hover {
+    background-color: #25d366;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   BOTÓN FLOTANTE WHATSAPP
+   ========================================================================== */
+.whatsapp-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #25d366;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.6);
+    z-index: 10000;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-tooltip {
+    position: absolute;
+    right: 70px;
+    background-color: var(--bg-card);
+    color: var(--text-white);
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    border: 1px solid #333;
+}
+
+.whatsapp-btn:hover .whatsapp-tooltip {
+    opacity: 1;
+}
+
+/* ==========================================================================
+   DISEÑO RESPONSIVO (MÓVILES Y TABLETS)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .logo-img {
+        max-height: 90px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .nosotros-container,
+    .ubicacion-container {
+        grid-template-columns: 1fr;
+    }
+
+    .book-wrapper {
+        width: calc(100% - 36px);
+        max-width: 520px;
+    }
+
+    .book-spread {
+        padding: 7px;
+    }
+
+    .book-pages {
+        inset: 7px;
+    }
+
+    .book-nav {
+        width: 30px;
+        height: 30px;
+        font-size: 0.85rem;
+    }
+
+    .prev-btn {
+        left: -15px;
+    }
+
+    .next-btn {
+        right: -15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .book-wrapper {
+        width: calc(100% - 32px);
+    }
+
+    .book-spread {
+        border-radius: 10px;
+    }
+
+    .section {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}

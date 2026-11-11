@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asadero - Sabor a la Leña y Carbón</title>
+    <link rel="icon" type="image/jpeg" href="img/Logo.jpg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SECCIÓN 1: ENCABEZADO Y NAVEGACIÓN -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo-container">
+                <img src="img/Logo.jpg" alt="Logo Asadero" class="logo-img">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#promos">Promociones</a></li>
+                <li><a href="#menu">Menú</a></li>
+                <li><a href="#nosotros">Nosotros</a></li>
+                <li><a href="#especialidades">Especialidades</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN 1: HERO / INICIO -->
+    <section id="inicio" class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <span class="badge"><i class="fas fa-fire"></i> 100% Asado a la Leña</span>
+                <h1>EL VERDADERO SABOR AL FUEGO Y LA BRASA</h1>
+                <p>Jugoso, crujiente y preparado diariamente con nuestra receta tradicional.</p>
+                <div class="hero-buttons">
+                    <a href="#menu" class="btn btn-primary">Ver Menú</a>
+                    <a href="https://w.app/kopbfz" target="_blank" class="btn btn-secondary">
+                        <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 2: PROMOCIONES -->
+    <section id="promos" class="section promos-section">
+        <h2 class="section-title">Promociones al <span>Fuego</span></h2>
+        <div class="promos-grid">
+            <div class="promo-card">
+                <span class="promo-tag">¡Fuego Total!</span>
+                <h3>Super Combo Familiar</h3>
+                <p>2 Pollos Asados + 2 platanos, queso bocadillo + papa salada + arepa + yuca + gaseosa 2.5 lt</p>
+                <div class="price">$99.000</div>
+                <a href="https://w.app/kopbfz" target="_blank" class="btn btn-small">Ordenar Ahora</a>
+            </div>
+
+            <div class="promo-card highlight">
+                <span class="promo-tag">Especial</span>
+                <h3>Combo 1</h3>
+                <p>1 Pollo broaster + francesa + yuca + patacon + arepa - 1.5 lt</p>
+                <div class="price">$53.000</div>
+                <a href="https://w.app/kopbfz" target="_blank" class="btn btn-small">Ordenar Ahora</a>
+            </div>
+
+            <div class="promo-card">
+                <span class="promo-tag">Almuerzo</span>
+                <h3>Combo 2</h3>
+                <p>Pollo y medio + Francesa + Yuca + Patacon + Arepa + Gaaseosa 1.5 Lt + Arroz + Papas + Bebida Personal</p>
+                <div class="price">$71.000</div>
+                <a href="https://w.app/kopbfz" target="_blank" class="btn btn-small">Ordenar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 3: NUESTRO MENÚ DIGITAL -->
+    <section id="menu" class="section menu-section">
+        <h2 class="section-title">Nuestro <span>Menú Digital</span></h2>
+        <p class="section-subtitle">Pasa las páginas como un libro real</p>
+
+        <div class="book-wrapper">
+
+            <button class="book-nav prev-btn" id="prevMenuBtn" aria-label="Página Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <div class="book-spread" id="bookSpread">
+                <div class="book-pages" id="bookPages">
+                    <div class="book-page left" id="pageLeft"></div>
+                    <div class="book-page right" id="pageRight"></div>
+                </div>
+            </div>
+
+            <button class="book-nav next-btn" id="nextMenuBtn" aria-label="Página Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+        </div>
+
+
+        <div id="menuPages" hidden>
+            <img src="img/menu0.png"  alt="Portada del Menú">
+            <img src="img/menu 1.png" alt="Página 1 del menú">
+            <img src="img/menu 2.png" alt="Página 2 del menú">
+            <img src="img/menu 3.png" alt="Página 3 del menú">
+            <img src="img/menu 4.png" alt="Página 4 del menú">
+            <img src="img/menu 5.png" alt="Página 5 del menú">
+            <img src="img/menu 6.png" alt="Página 6 del menú">
+            <img src="img/menu 7.png" alt="Página 7 del menú">
+            <img src="img/Contra portada.png" alt="Página 8 del menú">
+        </div>
+
+        <!-- Página decorativa al lado de la portada (puedes cambiar los textos) -->
+        <template id="introTemplate">
+            <div class="intro-page">
+                <i class="fas fa-fire intro-icon"></i>
+                <div class="intro-center">
+                    <h3 class="intro-title">MENÚ</h3>
+                    <div class="intro-divider"></div>
+                    <p class="intro-sub">Asado a la leña<br>y carbón</p>
+                </div>
+                <p class="intro-hint">Pasa la página <i class="fas fa-arrow-right"></i></p>
+            </div>
+        </template>
+    </section>
+
+    <!-- SECCIÓN 4: NOSOTROS -->
+    <section id="nosotros" class="section nosotros-section">
+        <div class="nosotros-container">
+            <div class="nosotros-text">
+                <h2 class="section-title left">Pasión por el <span>Fuego y la Brasa</span></h2>
+                <p>Seleccionamos cuidadosamente cada ingrediente y marinamos nuestros pollos con nuestra receta especial antes de llevarlos a la brasa viva.</p>
+                <p>El calor de la leña y el carbón otorgan ese toque ahumado inconfundible que hace que cada bocado sea crujiente por fuera y sumamente jugoso por dentro.</p>
+                <div class="stats">
+                    <div class="stat-item">
+                        <h3>100%</h3>
+                        <p>Sabor Artesanal</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>Fuego</h3>
+                        <p>Vivo y Constante</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nosotros-img">
+                <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&w=800&q=80" alt="Asando pollo a la brasa">
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 5: ESPECIALIDADES -->
+    <section id="especialidades" class="section especialidades-section">
+        <h2 class="section-title">Nuestras <span>Especialidades</span></h2>
+        <div class="cards-grid">
+
+            <div class="card">
+                <div class="card-img-slot">
+                    <img src="https://images.unsplash.com/photo-1626645738196-c2a7c87a8f58?auto=format&fit=crop&w=600&q=80" alt="Pollo Asado Tradicional">
+                </div>
+                <div class="card-body">
+                    <h3>Pollo Asado a la Brasa</h3>
+                    <p>Asado lentamente al calor de las brasas con notas ahumadas únicas.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-slot">
+                    <img src="https://images.unsplash.com/photo-1562967914-608f82629710?auto=format&fit=crop&w=600&q=80" alt="Pollo Broaster Crujiente">
+                </div>
+                <div class="card-body">
+                    <h3>Pollo Crujiente</h3>
+                    <p>Textura dorada por fuera y carne jugosa reteniendo todo su jugo.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-img-slot">
+                    <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=600&q=80" alt="Costillas a la BBQ">
+                </div>
+                <div class="card-body">
+                    <h3>Acompañamientos al Carbón</h3>
+                    <p>Complementos perfectos para realzar el sabor de cada plato.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SECCIÓN 6: UBICACIÓN Y MAPA -->
+    <section id="ubicacion" class="section ubicacion-section">
+        <h2 class="section-title">Encuéntranos <span>Fácilmente</span></h2>
+        <p class="section-subtitle">Visítanos y disfruta del mejor pollo caliente recién salido de la brasa.</p>
+
+        <div class="ubicacion-container">
+            <div class="info-box">
+
+                <div class="info-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Dirección</h4>
+                        <p>dg 146 # 128-09</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-clock"></i>
+                    <div>
+                        <h4>Horarios</h4>
+                        <p>Lunes a Domingo: 11:00 AM - 10:00 PM</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Teléfono de Pedidos</h4>
+                        <p>(+57) 314 3492123</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="map-box">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.089155072001!2d-74.10972862415575!3d4.754531741186844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f84642deb8cc5%3A0xe085ef115be2c2b1!2sDg.%20146%20%23128-9%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1794428101674!5m2!1ses-419!2sco"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN 7: FOOTER / CONTACTO -->
+    <footer id="contacto" class="footer">
+        <div class="footer-container">
+
+            <div class="footer-col">
+                <h3>Asadero al Fuego</h3>
+                <p>El auténtico sabor del pollo asado a la leña y carbón. ¡Tradición y calidad!</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#promos">Promociones</a></li>
+                    <li><a href="#menu">Menú</a></li>
+                    <li><a href="#ubicacion">Ubicación</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contáctanos</h3>
+                <div class="social-links">
+                    <a href="https://www.instagram.com/brasas_sabrosass?utm_source=qr&xtok=c2d4ZGxoazJrNmM0" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="" target="_blank" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Asadero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE DE WHATSAPP -->
+    <a href="https://w.app/kopbfz" class="whatsapp-btn" target="_blank" aria-label="Chat WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">¡Haz tu pedido aquí!</span>
+    </a>
+
+    <!-- SCRIPT DEL MENÚ: LIBRO DE 2 PÁGINAS CON HOJA QUE SE VOLTEA -->
+    <script>
+        const prevBtn = document.getElementById('prevMenuBtn');
+        const nextBtn = document.getElementById('nextMenuBtn');
+        const bookPages = document.getElementById('bookPages');
+        const pageLeft = document.getElementById('pageLeft');
+        const pageRight = document.getElementById('pageRight');
+
+        // Las imágenes se leen del bloque <div id="menuPages"> de arriba (índice 0 = portada)
+        const menuImages = Array.from(document.querySelectorAll('#menuPages img')).map(img => ({
+            src: img.getAttribute('src'),
+            alt: img.getAttribute('alt') || ''
+        }));
+
+        // Pliegos: [izquierda, derecha]  ('intro' = página decorativa "MENÚ", null = página vacía)
+        // Con 9 imágenes: [intro,0] [1,2] [3,4] [5,6] [7,8]
+        const spreads = [['intro', 0]];
+        for (let i = 1; i < menuImages.length; i += 2) {
+            spreads.push([i, i + 1 < menuImages.length ? i + 1 : null]);
+        }
+
+        let current = 0;
+        let isTurning = false;
+
+        // Precarga para que el giro no parpadee
+        menuImages.forEach(img => { const p = new Image(); p.src = img.src; });
+
+        function introHTML() {
+            return document.getElementById('introTemplate').innerHTML;
+        }
+
+        // Si una imagen no existe todavía, muestra un espacio para colocarla
+        function bindFallback(container) {
+            container.querySelectorAll('img').forEach(img => {
+                img.addEventListener('error', () => {
+                    const box = document.createElement('div');
+                    box.className = 'placeholder-page';
+                    box.innerHTML = '<i class="fas fa-image"></i>' +
+                                    '<p>Aquí va tu imagen</p>' +
+                                    '<small></small>';
+                    box.querySelector('small').textContent = img.getAttribute('src');
+                    img.replaceWith(box);
+                });
+            });
+        }
+
+        function pageHTML(i) {
+            if (i === null) return '';
+            if (i === 'intro') return introHTML();
+            return '<img src="' + menuImages[i].src + '" alt="' + menuImages[i].alt + '">';
+        }
+
+        function setPage(el, i) {
+            el.innerHTML = pageHTML(i);
+            el.classList.toggle('blank', i === null);
+            bindFallback(el);
+        }
+
+        function faceHTML(i, side) {
+            return '<div class="leaf-face ' + side + (i === null ? ' blank' : '') + '">' +
+                   pageHTML(i) + '<div class="shade"></div></div>';
+        }
+
+        function showSpread(index) {
+            setPage(pageLeft, spreads[index][0]);
+            setPage(pageRight, spreads[index][1]);
+        }
+
+        function flip(newIndex, direction) {
+            if (isTurning || newIndex === current) return;
+            isTurning = true;
+
+            const [curL, curR] = spreads[current];
+            const [newL, newR] = spreads[newIndex];
+
+            const leaf = document.createElement('div');
+            leaf.className = 'leaf ' + direction;
+
+            if (direction === 'next') {
+                // La hoja lleva la página derecha actual y al reverso la izquierda nueva
+                setPage(pageRight, newR); // lo que se descubre debajo
+                leaf.innerHTML = faceHTML(curR, 'front') + faceHTML(newL, 'back');
+            } else {
+                // La hoja lleva la página izquierda actual y al reverso la derecha nueva
+                setPage(pageLeft, newL); // lo que se descubre debajo
+                leaf.innerHTML = faceHTML(curL, 'front') + faceHTML(newR, 'back');
+            }
+
+            bindFallback(leaf);
+            bookPages.appendChild(leaf);
+
+            leaf.addEventListener('animationend', (e) => {
+                if (e.target !== leaf) return;
+                showSpread(newIndex);
+                leaf.remove();
+                current = newIndex;
+                isTurning = false;
+            });
+        }
+
+        nextBtn.addEventListener('click', () => {
+            flip((current + 1) % spreads.length, 'next');
+        });
+
+        prevBtn.addEventListener('click', () => {
+            flip((current - 1 + spreads.length) % spreads.length, 'prev');
+        });
+
+        showSpread(0);
+    </script>
+
+</body>
+</html>
